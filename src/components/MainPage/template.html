@@ -1,0 +1,29 @@
+
+<div class="MainPage__wrapper full-screen">
+    <div class="MainPage__header flex full-width padding__container-l flex-justify-between">
+        <h1 class="margin__bottom-l">Address Book</h1>
+        <div class="user-info flex flex-column">
+            <span><strong>{{ userName }}</strong></span>
+            <button class="button addForm" @click="changeAddFormVisible()">Добавить</button>
+        </div>
+        <button @click="logout" class="exit-btn cursor-pointer flex">Выйти</button>
+
+    </div>
+    <AddForm v-if="addFormVisible"
+             @close="changeAddFormVisible()"
+             @submit="getItems()"
+    />
+    <div class="Contact"
+         v-for="item in items"
+         :key="item.id">
+
+        <Contact
+            :data="item"
+
+    />
+    </div>
+
+</div>
+
+
+
