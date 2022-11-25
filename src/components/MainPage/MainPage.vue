@@ -16,6 +16,8 @@ export default {
       addFormVisible: false,
       items: [],
       source: new SourceService({endpoint: 'Contact'}),
+      telephone:'',
+      addSendTelephone: false
     }
   },
   beforeMount() {
@@ -34,7 +36,10 @@ export default {
           this.items = result.data;
         }
       });
-    }
+    },
+    changeAddFormTelephone() {
+      this.addSendTelephone = !this.addSendTelephone;
+    },
   },
   computed: {
     userName() {

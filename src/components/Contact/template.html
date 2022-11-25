@@ -1,3 +1,22 @@
-<div class="Contact__wrapper full-size">
-    <div> {{data.contact_name}} {{data.telephone}}</div>
+
+<div class="Contact__wrapper padding__container-m">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Имя</th>
+            <th>Фамилия</th>
+            <th>Телефон</th>
+            <th>Email</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>{{data.contact_name}}</td>
+            <td>{{data.contact_surname}}</td>
+            <td>{{data.telephone}}</td>
+            <td>{{data.email}}</td>
+        </tr>
+
+        </tbody>
+    </table>
 </div>

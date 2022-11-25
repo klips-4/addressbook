@@ -1,4 +1,3 @@
-
 <div class="MainPage__wrapper full-screen">
     <div class="MainPage__header flex full-width padding__container-l flex-justify-between">
         <h1 class="margin__bottom-l">Address Book</h1>
@@ -18,9 +17,34 @@
          :key="item.id">
 
         <Contact
-            :data="item"
+                v-if="!addFormVisible"
+                :data="item"
 
-    />
+        />
+    </div>
+
+    <div>
+        <form>
+            <input type="number" class="input margin__bottom-m full-width"
+                   v-model="telephone" id="tel"
+                   placeholder="Введите поиск по телефон" name="telephone">
+            <button
+                    @click="changeAddFormTelephone()"
+                    type="reset">
+                Искать
+            </button>
+        </form>
+    </div>
+
+
+    <div v-if="addSendTelephone" class="Contact"
+         v-for="item in items"
+         :key="item.id">
+
+        <Contact
+                v-if="telephone==item.telephone"
+                :data="item"
+        />
     </div>
 
 </div>

@@ -5,14 +5,13 @@ export default {
   name: "V-Contact",
   props: ["data"],
   data() {
-    return {}
+    return {
+      telephone: ''
+    }
   },
   methods: {
     deleteTask(id) {
       this.$emit('deleted', id)
-    },
-    completeTask(data) {
-      this.$emit('completeTask', data)
     },
   }
 }

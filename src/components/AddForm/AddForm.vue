@@ -4,7 +4,6 @@
 import SourceService from "@/services/SourceService";
 import {AuthHelpers} from "@/helpers/AuthHelpers";
 
-
 export default {
   name: "AddForm.vue",
   data() {
@@ -28,7 +27,7 @@ export default {
     submit() {
       const rec = {
         ...this.contacts, contact_name: this.name, user_id: AuthHelpers.getUser(), contact_surname: this.surname,
-        telephone: this.telephone, email: this.email
+        telephone:this.telephone, email: this.email
       };
       this.source.update(rec).then((result) => {
         if (result.success) {
@@ -39,7 +38,7 @@ export default {
           this.$emit('submit');
         }
       });
-    }
+    },
   }
 }
 </script>
