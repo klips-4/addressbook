@@ -20,34 +20,17 @@ export default {
     },
     leftButton: {
       type: String,
-      default: ''
+      default: 'Ok'
     },
-    timeout: {
-      type: Number,
-      default: 3000
-    }
   },
   data() {
     return {}
   },
   methods: {
-    hideNotification() {
+    deleteNotification() {
       let vm = this;
-      if (this.messages.length) {
-
-        setTimeout(function () {
-          vm.messages.splice(vm.messages.length - 1, 1)
-        }, vm.timeout)
-      }
+      vm.messages.splice(vm.messages.length-1,1)
     }
-  },
-  watch: {
-    messages() {
-      this.hideNotification()
-    }
-  },
-  mounted() {
-    this.hideNotification()
   }
 }
 </script>

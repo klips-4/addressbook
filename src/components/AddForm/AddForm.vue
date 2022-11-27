@@ -9,7 +9,7 @@ import notification from "@/components/Notifications/Notification";
 
 export default {
   components: {notification},
-  name: "AddForm.vue",
+  name: "AddForm",
 
   data() {
     return {
@@ -42,11 +42,13 @@ export default {
           this.telephone = "";
           this.email = "";
           this.$emit('submit');
-          this.messages.unshift({name: 'Контакт добавлен', id:timeStamp})
+          this.messages.unshift({name: 'Контакт добавлен', id:timeStamp});
+
         }
       });
     },
-  }
+  },
+
 }
 </script>
 
