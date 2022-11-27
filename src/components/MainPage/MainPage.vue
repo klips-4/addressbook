@@ -1,5 +1,4 @@
 <template src="./template.html">
-
 </template>
 
 <script>
@@ -7,6 +6,7 @@ import {AuthHelpers} from "@/helpers/AuthHelpers";
 import AddForm from "@/components/AddForm/AddForm";
 import Contact from "@/components/Contact/Contact";
 import SourceService from "@/services/SourceService";
+
 
 export default {
   name: "MainPage",
@@ -34,6 +34,13 @@ export default {
       this.source.list().then((result) => {
         if (result.success) {
           this.items = result.data;
+        }
+      });
+    },
+    removeContact(id) {
+      this.source.delete(id).then((res) => {
+        if (res.success) {
+          this.getItems()
         }
       });
     },

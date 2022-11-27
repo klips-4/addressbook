@@ -10,7 +10,7 @@ export default {
     }
   },
   methods: {
-    deleteTask(id) {
+    removeContact(id) {
       this.$emit('deleted', id)
     },
   }

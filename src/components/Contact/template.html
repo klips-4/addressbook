@@ -1,5 +1,4 @@
-
-<div class="Contact__wrapper padding__container-m">
+<div class="Contact__wrapper padding__container-s">
     <table class="table">
         <thead>
         <tr>
@@ -7,14 +6,22 @@
             <th>Фамилия</th>
             <th>Телефон</th>
             <th>Email</th>
+            <th>Удалить контакт</th>
         </tr>
         </thead>
         <tbody>
         <tr>
-            <td>{{data.contact_name}}</td>
-            <td>{{data.contact_surname}}</td>
-            <td>{{data.telephone}}</td>
-            <td>{{data.email}}</td>
+            <td>{{ data.contact_name }}</td>
+            <td>{{ data.contact_surname }}</td>
+            <td>
+                <a href="tel: {{data.telephone}}">{{ data.telephone }}</a>
+            </td>
+            <td>
+                <a href="mailto:{{ data.email }}">{{ data.email }}</a>
+            </td>
+            <td>
+                <button @click="removeContact(data.id)" class="button__delete cursor-pointer">X</button>
+            </td>
         </tr>
 
         </tbody>
