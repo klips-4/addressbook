@@ -1,3 +1,4 @@
+
 <div class="AddForm__wrapper full-screen shadow flex flex-center">
     <div class="AddForm__block padding__container-m">
 
@@ -34,4 +35,10 @@
         <button @click="$emit('close')" class="button__close cursor-pointer">Закрыть</button>
 
     </div>
+
 </div>
+
+<notification
+        :messages="messages"
+        :timeout="5000"
+/>

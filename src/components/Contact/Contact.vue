@@ -1,6 +1,7 @@
 <template src="./template.html"/>
 
 <script>
+
 export default {
   name: "V-Contact",
   props: ["data"],

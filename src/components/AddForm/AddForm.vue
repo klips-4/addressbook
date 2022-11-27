@@ -3,17 +3,22 @@
 <script>
 import SourceService from "@/services/SourceService";
 import {AuthHelpers} from "@/helpers/AuthHelpers";
+import notification from "@/components/Notifications/Notification";
+
+
 
 export default {
+  components: {notification},
   name: "AddForm.vue",
+
   data() {
     return {
       surname: "",
       name: "",
       telephone: "",
       email: "",
-      source: new SourceService({endpoint: 'Contact'})
-
+      source: new SourceService({endpoint: 'Contact'}),
+      messages: []
     }
   },
   beforeMount() {
@@ -30,12 +35,14 @@ export default {
         telephone:this.telephone, email: this.email
       };
       this.source.update(rec).then((result) => {
+        let timeStamp = Date.now().toLocaleString();
         if (result.success) {
           this.surname = '';
           this.name = '';
           this.telephone = "";
           this.email = "";
           this.$emit('submit');
+          this.messages.unshift({name: 'Контакт добавлен', id:timeStamp})
         }
       });
     },

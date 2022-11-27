@@ -8,6 +8,7 @@ import Contact from "@/components/Contact/Contact";
 import SourceService from "@/services/SourceService";
 
 
+
 export default {
   name: "MainPage",
   components: {AddForm, Contact},
@@ -17,7 +18,8 @@ export default {
       items: [],
       source: new SourceService({endpoint: 'Contact'}),
       telephone:'',
-      addSendTelephone: false
+      addSendTelephone: false,
+
     }
   },
   beforeMount() {
