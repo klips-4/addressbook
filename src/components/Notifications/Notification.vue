@@ -20,18 +20,13 @@ export default {
     },
     leftButton: {
       type: String,
-      default: 'Ok'
+      default: ''
     },
   },
   data() {
     return {}
   },
-  methods: {
-    deleteNotification() {
-      let vm = this;
-      vm.messages.splice(vm.messages.length-1,1)
-    }
-  }
+  methods: {}
 }
 </script>
 

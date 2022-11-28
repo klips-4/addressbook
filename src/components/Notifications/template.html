@@ -15,8 +15,6 @@
             <div class="content__buttons">
                 <button v-if="rightButton.length">{{ rightButton }}</button>
                 <button
-                        @click="deleteNotification"
-                        class="leftButton"
                         v-if="leftButton.length">
                         {{ leftButton }}
                 </button>
@@ -26,7 +24,4 @@
     </transition-group>
 </div>
 
-<AddForm
-        @timestart="hideNotification"
-/>
 

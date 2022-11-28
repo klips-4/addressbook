@@ -48,7 +48,7 @@ export default {
 
               this.messages = newMessage
             })
-          }, 1000)
+          }, 3000)
         }
       });
     },
