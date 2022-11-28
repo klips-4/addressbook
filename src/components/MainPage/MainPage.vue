@@ -6,12 +6,10 @@ import {AuthHelpers} from "@/helpers/AuthHelpers";
 import AddForm from "@/components/AddForm/AddForm";
 import Contact from "@/components/Contact/Contact";
 import SourceService from "@/services/SourceService";
-
-
-
+import ContactSend from "@/components/ContactSend/ContactSend";
 export default {
   name: "MainPage",
-  components: {AddForm, Contact},
+  components: {AddForm, Contact,ContactSend},
   data(){
     return{
       addFormVisible: false,
@@ -19,7 +17,6 @@ export default {
       source: new SourceService({endpoint: 'Contact'}),
       telephone:'',
       addSendTelephone: false,
-
     }
   },
   beforeMount() {

@@ -1,4 +1,5 @@
 import {default as axios} from 'axios';
+import {AuthHelpers} from "@/helpers/AuthHelpers";
 /**
  * Класс стандартизированых запросов
  */
@@ -29,7 +30,10 @@ export default class HttpRequest {
             endpointName,
             method,
             data: {
-                filter,
+                filter: {
+                    'X-User_ID': AuthHelpers.getUser(),
+                    ...filter
+                },
                 params
             }
         }

@@ -8,14 +8,27 @@
         <button @click="logout" class="exit-btn cursor-pointer">Выйти</button>
     </div>
 
+    <div v-if="addSendTelephone"
+         v-for="item in items"
+         :key="item.id">
+
+        <ContactSend
+                v-if="telephone==item.telephone"
+                :data="item"
+                @close="changeAddFormTelephone()"
+                @deleted="removeContact"
+        />
+    </div>
+
     <AddForm v-if="addFormVisible"
              @close="changeAddFormVisible()"
              @submit="getItems()"
+
     />
 
     <div class="MainPage__navigation flex flex-center">
         <form>
-            <input type="number" class="input margin__bottom-s"
+            <input type="tel" class="input margin__bottom-s"
                    v-model="telephone" id="tel"
                    placeholder="Введите поиск по телефону" name="telephone">
 
@@ -37,19 +50,5 @@
                 @deleted="removeContact"
         />
     </div>
-
-    <div v-if="addSendTelephone" class="Contact"
-         v-for="item in items"
-         :key="item.id">
-
-        <Contact
-                v-if="telephone==item.telephone"
-                :data="item"
-        />
-    </div>
-
 </div>
-
-
-
 

@@ -3,7 +3,7 @@
 <script>
 
 export default {
-  name: "V-Contact",
+  name: "V-ContactSend",
   props: ["data"],
   data() {
     return {

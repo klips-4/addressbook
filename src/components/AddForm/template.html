@@ -1,6 +1,10 @@
-
 <div class="AddForm__wrapper full-screen shadow flex flex-center">
     <div class="AddForm__block padding__container-m">
+        <div class="flex flex-justify-end"><button class=" AddForm__close  button__close cursor-pointer"
+                                                   @click="$emit('close')" >
+            х
+        </button>
+        </div>
 
         <input
                 type="text"
@@ -15,7 +19,7 @@
                 placeholder="Имя"
                 name="name">
         <input
-                type="number"
+                type="tel"
                 class="input margin__bottom-m full-width"
                 v-model="telephone"
                 placeholder="Телефон"
@@ -28,12 +32,12 @@
                 name="password"
                 id="email">
         <button class="button cursor-pointer margin__bottom-xs full-width"
+                :disabled="!(name && telephone)"
                 @click.prevent="submit"
-
         >
-            Отправить форму
+            Добавить контакт
         </button>
-        <button @click="$emit('close')" class="button__close cursor-pointer">Закрыть</button>
+
 
     </div>
 

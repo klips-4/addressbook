@@ -1,9 +1,8 @@
 .MainPage__wrapper {
   position: relative;
-  background: rgba(206, 206, 206, 0.17);
 }
 .MainPage__header {
-  background: var(--form-background);
+  background: rgba(255, 165, 0, 0.18);
 }
 h1 {
   text-shadow: -1px -1px #FFF, -2px -2px #FFF, -1px 1px #FFF, -2px 2px #FFF, 1px 1px #FFF, 2px 2px #FFF, 1px -1px #FFF, 2px -2px #FFF, -3px -3px 2px #BBB, -3px 3px 2px #BBB, 3px 3px 2px #BBB, 3px -3px 2px #BBB;
@@ -26,17 +25,36 @@ h1 {
 .exit-btn:hover {
   background: #808edc;
 }
-button {
-  width: 25px;
-  height: 25px;
+.button {
+  display: inline-block;
+  width: 95px;
+  background: #15b200;
+  height: 35px;
   border: 2px solid #999;
-  border-radius: 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-top: 12px;
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
   text-align: center;
-  margin: 15px;
-  font-size: 20px;
   transition: 0.3s;
 }
 button:hover {
-  background: rgba(0, 0, 0, 0.28);
+  background: rgba(43, 134, 19, 0.91);
+}
+span {
+  font-size: 25px;
+  color: rgba(0, 0, 0, 0.6);
+  text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2), 0px -5px 35px rgba(255, 255, 255, 0.3);
+  font-family: cursive;
+  font-style: italic;
+}
+.input {
+  width: 250px;
+  margin: 20px;
+  padding: 12px;
+  font-size: 14px;
 }
 /*# sourceMappingURL=style.css.map */

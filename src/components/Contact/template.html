@@ -14,10 +14,10 @@
             <td>{{ data.contact_name }}</td>
             <td>{{ data.contact_surname }}</td>
             <td>
-                <a href="tel: {{data.telephone}}">{{ data.telephone }} </a>
+                <a :href="'tel:' + data.telephone">{{ data.telephone }} </a>
             </td>
             <td>
-                <a href="mailto:{{ data.email }}">{{ data.email }}</a>
+                <a :href="'mailto:' + data.email">{{ data.email }}</a>
             </td>
             <td>
                 <button @click="removeContact(data.id)" class="button__delete cursor-pointer">X</button>

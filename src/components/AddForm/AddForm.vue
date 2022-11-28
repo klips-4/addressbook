@@ -4,13 +4,9 @@
 import SourceService from "@/services/SourceService";
 import {AuthHelpers} from "@/helpers/AuthHelpers";
 import notification from "@/components/Notifications/Notification";
-
-
-
 export default {
   components: {notification},
   name: "AddForm",
-
   data() {
     return {
       surname: "",
@@ -43,12 +39,20 @@ export default {
           this.email = "";
           this.$emit('submit');
           this.messages.unshift({name: 'Контакт добавлен', id:timeStamp});
+          setTimeout(() => {
+            const newMessage = [];
+            this.messages.forEach((message) => {
+              if (message.id !== timeStamp) {
+                newMessage.push(message)
+              }
 
+              this.messages = newMessage
+            })
+          }, 1000)
         }
       });
     },
   },
-
 }
 </script>
 
