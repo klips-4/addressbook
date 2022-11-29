@@ -7,7 +7,8 @@ export default {
   props: ["data"],
   data() {
     return {
-      telephone: ''
+      telephone: '',
+
     }
   },
   methods: {
